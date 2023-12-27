@@ -1,5 +1,5 @@
 
-![ss1](https://github.com/dikshanttatrari/chatverse/assets/82396523/02a75730-94e6-4451-b8f0-479666daaa4c)
+<img src="https://github.com/dikshanttatrari/chatverse/assets/82396523/02a75730-94e6-4451-b8f0-479666daaa4c" height="30" width="30"></img>
 ![ss2](https://github.com/dikshanttatrari/chatverse/assets/82396523/63bce83d-08ef-4095-a969-dd479d8a3ef6)
 ![ss3](https://github.com/dikshanttatrari/chatverse/assets/82396523/93621da1-9953-4fe6-88f5-b4c9c6e85f50)
 ![ss4](https://github.com/dikshanttatrari/chatverse/assets/82396523/07812ff5-268b-4a81-b9c7-b12c3fb3c44b)
