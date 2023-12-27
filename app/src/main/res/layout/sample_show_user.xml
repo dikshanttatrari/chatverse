@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="?selectableItemBackground"
+    android:layout_marginBottom="8dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:id="@+id/profile_image"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/account"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User name"
+        android:layout_toRightOf="@id/profile_image"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/sf"
+        android:textSize="18sp"
+        android:padding="5dp"
+        android:id="@+id/username_text"/>
+
+    <ImageView
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:src="@drawable/bluetick"
+        android:layout_marginStart="-2dp"
+        android:visibility="gone"
+        android:layout_toRightOf="@id/username_text"
+        android:layout_marginTop="12dp"
+        android:id="@+id/bluetick" />
+
+    <com.vanniktech.emoji.EmojiTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="this is the last message."
+        android:id="@+id/last_message_text"
+        android:layout_below="@id/username_text"
+        android:layout_toRightOf="@id/profile_image"
+        android:padding="5dp"
+        android:layout_marginTop="-10dp"
+        android:fontFamily="@font/sf"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="10:00"
+        android:textSize="12sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/last_message_time_text"
+        android:fontFamily="@font/sf"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/last_message_time_text"
+        android:layout_marginEnd="14dp"
+        android:layout_alignParentEnd="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dot"
+            android:id="@+id/dot"
+            android:visibility="gone"
+            android:fontFamily="@font/sf"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/message_count"
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

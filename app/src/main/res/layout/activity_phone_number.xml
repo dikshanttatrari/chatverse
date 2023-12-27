@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:context=".PhoneNumberActivity">
+
+    <RelativeLayout
+        android:id="@+id/rlayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/layout_background"
+        android:backgroundTint="@color/brown"
+        android:elevation="3dp">
+
+        <ImageView
+            android:id="@+id/signuplogo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/chatverse_logo" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="3dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/signuplogo"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/layout_background">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2. Verify mobile number"
+                android:layout_centerHorizontal="true"
+                android:textStyle="bold"
+                android:textColor="@color/brown"
+                android:fontFamily="@font/sf"
+                android:textSize="24sp"
+                android:id="@+id/textview2"
+                android:layout_marginTop="32dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textview3"
+                android:text="We will send an SMS containing OTP to your mobile number. Enter your country and mobile number."
+                android:textAlignment="center"
+                android:layout_below="@id/textview2"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginEnd="64dp"
+                android:fontFamily="@font/sf"
+                android:textColor="@color/black"/>
+
+            <com.hbb20.CountryCodePicker
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textview3"
+                android:id="@+id/ccp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/rounded_corner"
+                android:elevation="3dp"
+                android:layout_marginTop="8dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ccp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:hint=" Mobile number"
+                android:paddingStart="10dp"
+                android:id="@+id/mobile_number"
+                android:inputType="phone|number"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/sf"
+                android:elevation="3dp"
+                android:textColorHint="@color/black"
+                android:background="@drawable/rounded_corner"
+                android:padding="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Carrier SMS charges may apply."
+                android:textSize="10sp"
+                android:textColor="@color/grey"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/mobile_number"
+                android:fontFamily="@font/sf"
+                android:textStyle="bold"
+                android:layout_marginTop="38dp"/>
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mobile_number"
+                android:layout_marginTop="52dp"
+                android:layout_marginEnd="38dp"
+                android:layout_marginStart="38dp"
+                android:backgroundTint="@color/red"
+                android:background="@drawable/layout_background"
+                android:text="Next"
+                android:id="@+id/next_btn"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:fontFamily="@font/sf"
+                android:textSize="16sp"
+                android:layout_marginBottom="32dp"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+

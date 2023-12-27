@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:context=".ProfileActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="32dp"
+        android:layout_marginLeft="32dp"
+        android:id="@+id/rlayout1"
+        android:backgroundTint="@color/brown"
+        android:background="@drawable/layout_background"
+        android:elevation="3dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/chatverse_logo"
+            android:id="@+id/signuplogo"
+            android:layout_centerHorizontal="true"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="3dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:layout_below="@id/signuplogo"
+            android:background="@drawable/layout_background">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4. Profile Info"
+                android:layout_centerHorizontal="true"
+                android:textStyle="bold"
+                android:textColor="@color/brown"
+                android:fontFamily="@font/sf"
+                android:textSize="24sp"
+                android:id="@+id/textview2"
+                android:layout_marginTop="32dp"/>
+
+            <TextView
+                android:id="@+id/textview3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textview2"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="64dp"
+                android:fontFamily="@font/sf"
+                android:text="Please provide your username and user id below. "
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textview3"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:background="@drawable/rounded_corner"
+                android:elevation="3dp"
+                android:layout_marginTop="16dp"
+                android:padding="5dp"
+                android:hint="Username"
+                android:paddingStart="10dp"
+                android:textColorHint="@color/black"
+                android:inputType="textPersonName"
+                android:textColor="@color/black"
+                android:fontFamily="@font/sf"
+                android:id="@+id/username"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/username"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:background="@drawable/rounded_corner"
+                android:elevation="3dp"
+                android:layout_marginTop="16dp"
+                android:padding="5dp"
+                android:hint=" User id"
+                android:paddingStart="10dp"
+                android:textColorHint="@color/black"
+                android:inputType="textPersonName"
+                android:textColor="@color/black"
+                android:fontFamily="@font/sf"
+                android:id="@+id/userid"/>
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/userid"
+                android:layout_marginTop="54dp"
+                android:layout_marginEnd="38dp"
+                android:layout_marginStart="38dp"
+                android:backgroundTint="@color/red"
+                android:background="@drawable/layout_background"
+                android:text="Finish"
+                android:id="@+id/finish_btn"
+                android:textColor="@color/white"
+                android:fontFamily="@font/sf"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="16dp"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

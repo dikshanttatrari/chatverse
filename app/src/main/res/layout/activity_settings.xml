@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="@color/brown"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/account"
+        app:civ_border_width="5dp"
+        android:id="@+id/account_profile_pic"
+        app:civ_border_color="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:elevation="6dp"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:id="@+id/linear_layout"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_corner"
+        android:layout_below="@+id/account_profile_pic"
+        android:layout_centerHorizontal="true"
+        android:elevation="6dp"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
+            android:fontFamily="@font/sf"
+            android:id="@+id/account_user_name"
+            android:text="User name"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
+            android:fontFamily="@font/sf"
+            android:layout_below="@id/account_user_name"
+            android:id="@+id/account_user_id"
+            android:layout_marginTop="-2dp"
+            android:text="username"/>
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/bluetick"
+            android:layout_toRightOf="@id/account_user_name"
+            android:layout_marginStart="1dp"
+            android:visibility="gone"
+            android:id="@+id/bluetick" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_below="@id/account_user_id"
+            android:fontFamily="@font/sf"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/account_mobile_number"
+            android:text="+91 99999 99999"/>
+
+    </RelativeLayout>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar_container"
+        android:theme="@style/Theme.ChatVerse.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/Theme.ChatVerse.PopupOverlay">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back"
+                android:layout_marginTop="21dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                app:tint="@color/white"
+                android:id="@+id/back_arrow"
+                android:layout_marginEnd="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:fontFamily="@font/sf"
+                android:textColor="@color/white"
+                android:textSize="24sp"/>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear_layout"
+        android:layout_marginStart="32dp"
+        android:padding="10dp"
+        android:inputType="textPersonName"
+        android:id="@+id/username_edit_text"
+        android:hint="User name"
+        android:paddingStart="8dp"
+        android:textColorHint="@color/brown"
+        android:textColor="@color/brown"
+        android:fontFamily="@font/sf"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/layout_background"
+        android:elevation="3dp"
+        android:backgroundTint="@color/lightgrey"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/username_edit_text"
+        android:id="@+id/user_id"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:padding="8dp"
+        android:hint="User Id"
+        android:paddingStart="10dp"
+        android:textColorHint="@color/brown"
+        android:textColor="@color/brown"
+        android:fontFamily="@font/sf"
+        android:inputType="textPersonName"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/layout_background"
+        android:elevation="3dp"
+        android:backgroundTint="@color/lightgrey"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_id"
+        android:id="@+id/about"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:padding="8dp"
+        android:hint="About"
+        android:paddingStart="10dp"
+        android:textColorHint="@color/brown"
+        android:textColor="@color/brown"
+        android:fontFamily="@font/sf"
+        android:inputType="textLongMessage"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/layout_background"
+        android:elevation="3dp"
+        android:backgroundTint="@color/lightgrey"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:layout_below="@id/about"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:id="@+id/account_save_btn"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-20dp"
+        android:background="@drawable/linear_bg"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:padding="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Privacy Policy"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/sf"
+            android:textStyle="bold"
+            android:drawableStart="@drawable/lock"
+            android:drawablePadding="5dp"
+            android:id="@+id/privacy_policy"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Invite a friend "
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/sf"
+            android:textStyle="bold"
+            android:drawableStart="@drawable/person"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/white"
+            android:id="@+id/invite"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notifications  "
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/sf"
+            android:textStyle="bold"
+            android:drawableStart="@drawable/bell"
+            android:layout_marginTop="8dp"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/white"
+            android:id="@+id/notification"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Help                 "
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/sf"
+            android:textStyle="bold"
+            android:drawableStart="@drawable/help"
+            android:layout_marginTop="8dp"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/white"
+            android:id="@+id/help"/>
+    </LinearLayout>
+
+</RelativeLayout>

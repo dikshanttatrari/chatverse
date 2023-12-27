@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:background="@drawable/corners_chatting"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        android:id="@+id/day_stamp_layout"
+        android:backgroundTint="@color/grey">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Today"
+            android:id="@+id/day_stamp_text"
+            android:padding="3dp"
+            android:textSize="14sp"
+            android:fontFamily="@font/sf"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/corners_chatting"
+        android:backgroundTint="@color/sender"
+        android:padding="8dp"
+        android:id="@+id/left_chat_layout"
+        android:layout_marginEnd="80dp">
+
+        <ImageView
+            android:id="@+id/left_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:visibility="gone"
+            android:scaleType="center" />
+
+        <com.vanniktech.emoji.EmojiTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_below="@id/left_image_view"
+            android:textSize="18sp"
+            android:minWidth="40dp"
+            android:inputType="textLongMessage|textMultiLine|textNoSuggestions"
+            android:id="@+id/left_chat_textview"
+            android:fontFamily="@font/sf"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="8sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:fontFamily="@font/sf"
+            android:layout_below="@id/left_chat_textview"
+            android:layout_alignEnd="@id/left_chat_textview"
+            android:id="@+id/left_chat_time"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/corners_chatting"
+        android:backgroundTint="@color/receiver"
+        android:layout_alignParentEnd="true"
+        android:padding="8dp"
+        android:id="@+id/right_chat_layout"
+        android:layout_marginStart="80dp">
+
+        <ImageView
+            android:id="@+id/right_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="center"
+            android:visibility="gone"/>
+
+        <com.vanniktech.emoji.EmojiTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:minWidth="40dp"
+            android:textSize="18sp"
+            android:layout_below="@id/right_image_view"
+            android:inputType="textNoSuggestions|textMultiLine|textLongMessage"
+            android:id="@+id/right_chat_textview"
+            android:fontFamily="@font/sf"/>
+
+        <TextView
+            android:id="@+id/right_chat_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/right_chat_textview"
+            android:layout_marginTop="3dp"
+            android:layout_alignEnd="@id/right_chat_textview"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:fontFamily="@font/sf"
+            android:textSize="8sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

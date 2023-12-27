@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserProfileActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar_container"
+        android:theme="@style/Theme.ChatVerse.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/Theme.ChatVerse.PopupOverlay">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_gravity="start"
+                app:tint="@color/white"
+                android:id="@+id/back_arrow"
+                android:layout_marginEnd="6dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User name"
+                android:id="@+id/user_name_user_profile"
+                android:fontFamily="@font/sf"
+                android:textColor="@color/white"
+                android:textSize="24sp"/>
+
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="6dp"
+        android:layout_below="@id/toolbar_container"
+        android:background="@drawable/layout_background"
+        android:id="@+id/relativelayout">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/account"
+            app:civ_border_width="2dp"
+            android:id="@+id/user_profile_pic"
+            app:civ_border_color="@color/brown"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            android:elevation="2dp"/>
+
+        <com.vanniktech.emoji.EmojiTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_profile_pic"
+            android:text="User name"
+            android:id="@+id/user_profile_username"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/sf"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="24sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_profile_username"
+            android:text="username"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/user_profile_user_id"
+            android:fontFamily="@font/sf"
+            android:textColor="@color/black"/>
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/bluetick"
+            android:layout_toRightOf="@id/user_profile_username"
+            android:layout_below="@id/user_profile_pic"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="3dp"
+            android:visibility="gone"
+            android:id="@+id/bluetick"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+91 99999 99999"
+            android:layout_below="@id/user_profile_user_id"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
+            android:fontFamily="@font/sf"
+            android:id="@+id/user_profile_mobile_number"/>
+
+        <com.zegocloud.uikit.prebuilt.call.invite.widget.ZegoSendCallInvitationButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/calls"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_below="@id/user_profile_mobile_number"
+            android:layout_marginStart="140dp"
+            android:id="@+id/user_profile_call_btn"
+            android:padding="6dp"
+            android:layout_marginTop="8dp"/>
+
+        <com.zegocloud.uikit.prebuilt.call.invite.widget.ZegoSendCallInvitationButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/videocall"
+            android:id="@+id/user_profile_video_call_btn"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_below="@id/user_profile_mobile_number"
+            app:tint="@color/black"
+            android:padding="6dp"
+            android:layout_toRightOf="@id/user_profile_call_btn"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="16dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relativelayout"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/layout_background"
+        android:elevation="6dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:id="@+id/textview5"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/sf"
+            android:textStyle="bold"/>
+
+        <com.vanniktech.emoji.EmojiTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textview5"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/sf"
+            android:layout_marginTop="8dp"
+            android:text="this is the about message of the user."
+            android:id="@+id/user_profile_about"
+            android:layout_marginBottom="16dp"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/linear_bg"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:padding="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="from"
+            android:layout_gravity="center"
+            android:fontFamily="@font/sf"
+            android:textColor="@color/grey"
+            android:textSize="18sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TechVerse"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:fontFamily="@font/sf"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
