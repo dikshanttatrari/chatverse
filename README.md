@@ -1,1 +1,1 @@
-![ss1](ss/ss1)
+![ss1](https://www.github.com/dikshanttatrari/chatverse/ss/ss1)
