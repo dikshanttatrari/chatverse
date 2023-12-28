@@ -1,5 +1,5 @@
 
-## ChatVerse is an open source chatting application designed by [Dikshant Tatrari](github.com/dikshanttatrari).
+## ChatVerse is an open source chatting application designed by [Dikshant Tatrari](https://www.github.com/dikshanttatrari).
 
 ### Splash Screen -
 
