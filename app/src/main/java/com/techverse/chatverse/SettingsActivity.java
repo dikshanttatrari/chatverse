@@ -87,6 +87,31 @@ public class SettingsActivity extends AppCompatActivity {
             updateBtnClick();
         });
 
+        privacyPolicy.setOnClickListener(view -> {
+            openWebsite("https://dikshanttatrari.github.io/chatverse-website/privacy.html");
+        });
+
+        help.setOnClickListener(view -> {
+           openWebsite("https://wa.me/918439199567");
+        });
+
+        invite.setOnClickListener(view -> {
+            sendWhatsAppMessage("Hola amigo! Let's chat on this brand new app *ChatVerse*. It's completely secure, fast and reliable. Download the app now: https://dikshanttatrari.github.io/chatverse-website");
+        });
+
+        notifications.setOnClickListener(view -> {
+            Intent intent = new Intent();
+            intent.setAction("android.settings.APP_NOTIFICATION_SETTINGS");
+
+            intent.putExtra("app_package", getPackageName());
+            intent.putExtra("app_uid", getApplicationInfo().uid);
+
+            intent.putExtra("android.provider.extra.APP_PACKAGE", getPackageName());
+
+            startActivity(intent);
+        });
+
+
         profilePic.setOnClickListener(view -> {
             ImagePicker.with(this).cropSquare().compress(512).maxResultSize(512,512)
                     .createIntent(new Function1<Intent, Unit>() {
@@ -188,5 +213,25 @@ public class SettingsActivity extends AppCompatActivity {
             mobileNumber.setText(currentUserModel.getPhone());
         });
     }
+
+    private void openWebsite(String url) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        startActivity(intent);
+    }
+
+    private void sendWhatsAppMessage(String message) {
+        Intent sendIntent = new Intent("android.intent.action.MAIN");
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, message);
+        sendIntent.setType("text/plain");
+        sendIntent.setPackage("com.whatsapp");
+
+        try {
+            startActivity(sendIntent);
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(this, "WhatsApp is not installed.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 
 }

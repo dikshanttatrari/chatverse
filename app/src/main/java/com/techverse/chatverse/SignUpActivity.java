@@ -3,6 +3,7 @@ package com.techverse.chatverse;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
@@ -31,7 +32,7 @@ public class SignUpActivity extends AppCompatActivity {
         ClickableSpan termsAndConditionsClick = new ClickableSpan() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(SignUpActivity.this, "Clicked!", Toast.LENGTH_SHORT).show();
+                openWebsite("https://dikshanttatrari.github.io/chatverse-website/privacy.html");
             }
         };
 
@@ -44,6 +45,10 @@ public class SignUpActivity extends AppCompatActivity {
             Intent intent = new Intent(SignUpActivity.this, PhoneNumberActivity.class);
             startActivity(intent);
         });
+    }
 
+    private void openWebsite(String url) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        startActivity(intent);
     }
 }

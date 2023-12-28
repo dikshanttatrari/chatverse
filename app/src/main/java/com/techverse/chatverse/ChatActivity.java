@@ -40,10 +40,7 @@ import com.techverse.chatverse.utils.FirebaseUtil;
 import com.vanniktech.emoji.EmojiPopup;
 import com.vanniktech.emoji.EmojiManager;
 import com.vanniktech.emoji.ios.IosEmojiProvider;
-import com.zegocloud.uikit.prebuilt.call.invite.ZegoUIKitPrebuiltCallInvitationConfig;
-import com.zegocloud.uikit.prebuilt.call.invite.ZegoUIKitPrebuiltCallInvitationService;
-import com.zegocloud.uikit.prebuilt.call.invite.widget.ZegoSendCallInvitationButton;
-import com.zegocloud.uikit.service.defines.ZegoUIKitUser;
+
 
 import org.json.JSONObject;
 
@@ -67,7 +64,6 @@ public class ChatActivity extends AppCompatActivity {
     UserModel otherUser;
     EditText messageInput;
     ImageButton sendMessageBtn;
-    ZegoSendCallInvitationButton videoCallBtn, voiceCallBtn;
     ImageButton backBtn;
     ImageView emojiBtn, cameraBtn, blueTick;
     TextView otherUsername;
@@ -87,7 +83,6 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EmojiManager.install(new IosEmojiProvider());
         setContentView(R.layout.activity_chat);
-        startService();
 
 
         otherUser = AndroidUtil.getUserModelFromIntent(getIntent());
@@ -102,8 +97,6 @@ public class ChatActivity extends AppCompatActivity {
         emojiBtn = findViewById(R.id.emoji_btn);
         rootView = findViewById(R.id.root_view);
         cameraBtn = findViewById(R.id.camera_btn);
-        videoCallBtn = findViewById(R.id.video_call_btn);
-        voiceCallBtn = findViewById(R.id.voice_call_btn);
         blueTick = findViewById(R.id.bluetick);
 
         otherUsername.setOnClickListener(view -> {
@@ -113,10 +106,6 @@ public class ChatActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        String targetUserID = otherUser.getUserId();
-        String targetUserName = otherUser.getUsername();
-        setVoiceCall(targetUserID, targetUserName);
-        setVideoCall(targetUserID, targetUserName);
 
 
         if (otherUser.isHasBlueTick()){
@@ -176,42 +165,7 @@ public class ChatActivity extends AppCompatActivity {
         markChatAsRead();
 
     }
-    void startService(){
 
-        Application application = getApplication();
-        long appID = 1742026727;
-        String appSign = "e50bd3f49ce2d052afa16b129e6a3a639fbdd6fa0efc100d24579793e58e3640";
-        String userID = FirebaseUtil.currentUserId();
-        FirebaseUtil.currentUserDetails().get().addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                UserModel currentUser = task.getResult().toObject(UserModel.class);
-                if (currentUser != null) {
-                    String userName = currentUser.getUsername();
-
-                    ZegoUIKitPrebuiltCallInvitationConfig callInvitationConfig = new ZegoUIKitPrebuiltCallInvitationConfig();
-                    ZegoUIKitPrebuiltCallInvitationService.init(application, appID, appSign, userID, userName, callInvitationConfig);
-                }
-            }
-        });
-    }
-
-    void setVoiceCall(String targetUserID, String targetUserName){
-        voiceCallBtn.setIsVideoCall(false);
-        voiceCallBtn.setResourceID("zego_uikit_call");
-        voiceCallBtn.setInvitees(Collections.singletonList(new ZegoUIKitUser(targetUserID,targetUserName)));
-    }
-
-    void setVideoCall(String targetUserID, String targetUserName){
-        videoCallBtn.setIsVideoCall(true);
-        videoCallBtn.setResourceID("zego_uikit_call");
-        videoCallBtn.setInvitees(Collections.singletonList(new ZegoUIKitUser(targetUserID,targetUserName)));
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        ZegoUIKitPrebuiltCallInvitationService.unInit();
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

@@ -57,6 +57,4 @@ dependencies {
     implementation "androidx.emoji:emoji:1.1.0"
     implementation "com.vanniktech:emoji-ios:0.6.0"
     implementation("com.squareup.okhttp3:okhttp:4.11.0")
-    implementation 'com.github.ZEGOCLOUD:zego_uikit_prebuilt_call_android:+'
-
 }

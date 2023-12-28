@@ -16,10 +16,6 @@ import com.techverse.chatverse.model.UserModel;
 import com.techverse.chatverse.utils.AndroidUtil;
 import com.techverse.chatverse.utils.FirebaseUtil;
 import com.vanniktech.emoji.EmojiTextView;
-import com.zegocloud.uikit.prebuilt.call.invite.ZegoUIKitPrebuiltCallInvitationConfig;
-import com.zegocloud.uikit.prebuilt.call.invite.ZegoUIKitPrebuiltCallInvitationService;
-import com.zegocloud.uikit.prebuilt.call.invite.widget.ZegoSendCallInvitationButton;
-import com.zegocloud.uikit.service.defines.ZegoUIKitUser;
 
 import java.util.Collections;
 
@@ -31,7 +27,6 @@ public class UserProfileActivity extends AppCompatActivity {
     CircleImageView profilePic;
     EmojiTextView userName, about;
     UserModel model;
-    ZegoSendCallInvitationButton voiceCallBtn, videoCallBtn;
 
 
     @SuppressLint({"MissingInflatedId", "SetTextI18n"})
@@ -49,8 +44,6 @@ public class UserProfileActivity extends AppCompatActivity {
         profilePic = findViewById(R.id.user_profile_pic);
         userName = findViewById(R.id.user_profile_username);
         about = findViewById(R.id.user_profile_about);
-        voiceCallBtn = findViewById(R.id.user_profile_call_btn);
-        videoCallBtn = findViewById(R.id.user_profile_video_call_btn);
         accountUserId = findViewById(R.id.user_profile_user_id);
 
         backBtn.setOnClickListener(view -> onBackPressed());
@@ -61,11 +54,6 @@ public class UserProfileActivity extends AppCompatActivity {
         phoneNumber.setText(model.getPhone());
         about.setText(model.getAbout());
 
-
-        String targetUserID = model.getUserId();
-        String targetUserName = model.getUsername();
-        setVoiceCall(targetUserID, targetUserName);
-        setVideoCall(targetUserID, targetUserName);
 
 
         if (model.getUserId() != null && !model.getUserId().isEmpty()) {
@@ -106,29 +94,9 @@ public class UserProfileActivity extends AppCompatActivity {
                 UserModel currentUser = task.getResult().toObject(UserModel.class);
                 if (currentUser != null) {
                     String userName = currentUser.getUsername();
-
-                    ZegoUIKitPrebuiltCallInvitationConfig callInvitationConfig = new ZegoUIKitPrebuiltCallInvitationConfig();
-                    ZegoUIKitPrebuiltCallInvitationService.init(application, appID, appSign, userID, userName, callInvitationConfig);
                 }
             }
         });
     }
 
-    void setVoiceCall(String targetUserID, String targetUserName){
-        voiceCallBtn.setIsVideoCall(false);
-        voiceCallBtn.setResourceID("zego_uikit_call");
-        voiceCallBtn.setInvitees(Collections.singletonList(new ZegoUIKitUser(targetUserID,targetUserName)));
-    }
-
-    void setVideoCall(String targetUserID, String targetUserName){
-        videoCallBtn.setIsVideoCall(true);
-        videoCallBtn.setResourceID("zego_uikit_call");
-        videoCallBtn.setInvitees(Collections.singletonList(new ZegoUIKitUser(targetUserID,targetUserName)));
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        ZegoUIKitPrebuiltCallInvitationService.unInit();
-    }
 }

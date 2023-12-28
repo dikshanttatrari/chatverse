@@ -103,9 +103,10 @@
             android:layout_centerHorizontal="true"
             android:textColor="@color/black"
             android:fontFamily="@font/sf"
-            android:id="@+id/user_profile_mobile_number"/>
+            android:id="@+id/user_profile_mobile_number"
+            android:layout_marginBottom="10dp"/>
 
-        <com.zegocloud.uikit.prebuilt.call.invite.widget.ZegoSendCallInvitationButton
+        <!--<ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/calls"
@@ -116,7 +117,7 @@
             android:padding="6dp"
             android:layout_marginTop="8dp"/>
 
-        <com.zegocloud.uikit.prebuilt.call.invite.widget.ZegoSendCallInvitationButton
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/videocall"
@@ -128,7 +129,7 @@
             android:layout_toRightOf="@id/user_profile_call_btn"
             android:layout_marginTop="8dp"
             android:layout_marginStart="10dp"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="16dp"/>-->
     </RelativeLayout>
 
     <RelativeLayout
